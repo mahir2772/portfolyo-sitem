@@ -1,16 +1,163 @@
 ---
-
+// Tailwind'in çalışması için bu import satırı gerekli.
+// Henüz global.css dosyasını oluşturmadık, bir sonraki adımda yapacağız.
+import '../styles/global.css';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Muhammet Mahir Doğmuş - Web Performans Uzmanı</title>
+  </head>
+  <body class="bg-white">
+
+    <main>
+      <section class="bg-slate-50">
+        {/* Sade bir arkaplan rengi, profesyonel bir görünüm sağlar */}
+        <div class="container mx-auto px-6 py-24 text-center">
+          {/* 'py-24': Üstten ve alttan bolca boşluk bırakarak ferah bir tasarım oluşturur */}
+
+          <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
+            {/* 'text-4xl md:text-6xl': Mobil ve masaüstü için farklı yazı boyutları (Responsive Tipografi)
+                'font-extrabold': Çok kalın bir yazı stili, başlığı öne çıkarır.
+                'leading-tight': Satır yüksekliğini azaltarak harfleri birbirine yaklaştırır.
+            */}
+            Yavaş Web Siteleri İşletmenize Zaman Kaybettirir.
+          </h1>
+          <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
+            Merhaba, ben Muhammet Mahir Doğmuş. Modern teknolojileri kullanarak mevcut web sitenizin performansını zirveye taşıyor, kullanıcı deneyimini iyileştiriyor ve sizi arama motorlarında üst sıralara çıkarıyorum.
+          </p>
+          
+          <div class="mt-10 flex items-center justify-center gap-x-6">
+            {/* 'gap-x-6': Butonlar arasına yatayda boşluk bırakır */}
+
+            {/* Ana Buton (Primary) */}
+            <a href="#hizmetler" class="rounded-full bg-red-600 px-8 py-3 text-base font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 transition-colors">
+              Hizmetlerimi Gör
+            </a>
+
+            {/* İkincil Buton (Secondary) */}
+            <a href="#kanit" class="text-base font-semibold leading-6 text-gray-900">
+              Başarı Hikayesi <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+	  <section id="kanit" class="py-20 sm:py-24 bg-white">
+  {/* 'id="kanit"': Bu kimlik, Hero bölümündeki "Başarı Hikayesi" linkinin buraya atlamasını sağlar. */}
+  <div class="container mx-auto px-6">
+    <div class="text-center">
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        Kanıtlanmış Sonuçlar, Gerçek Bir Başarı Hikayesi
+      </h2>
+      <p class="mt-4 text-lg leading-8 text-gray-600">
+        Yavaşlık kader değildir. Doğru teknoloji ve optimizasyonla nelerin mümkün olduğunu görün.
+      </p>
+    </div>
+     <div class="mt-10 flex justify-center">
+      {/* Bu yeni 'flex justify-center' div'i, içindeki resim kutusunu ortalamak için eklendi */}
+      <div class="max-w-5xl"> 
+        {/* İŞTE SİHİRLİ CLASS: 'max-w-5xl'
+            Bu class, içindeki resmin genişliğinin belirli bir maksimum değeri (bu örnekte 5xl, yani yaklaşık 1024px) geçmesini engeller.
+            Böylece resim, büyük ekranlarda bile sayfaya devasa bir şekilde yayılmaz.
+        */}
+        <img 
+          src="/oncesi-sonrasi.png" 
+          alt="Performans optimizasyonu öncesi ve sonrası PageSpeed Insights raporu" 
+          class="w-full rounded-xl shadow-2xl ring-1 ring-gray-900/10"
+        />
+        {/* 'w-full': Resme 'içinde bulunduğun kutunun genişliğine uy' komutunu verir. Kutu 'max-w-5xl' ile sınırlandığı için resim de o sınırı geçemez. */}
+      </div>
+    </div>
+  </div>
+</section>
+<section id="hizmetler" class="py-20 sm:py-24 bg-slate-50">
+  {/* 'id="hizmetler"': Bu kimlik, Hero'daki "Hizmetlerimi Gör" butonunun buraya atlamasını sağlar. */}
+  <div class="container mx-auto px-6">
+    <div class="text-center">
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        Sunduğum Hizmet Paketi
+      </h2>
+      <p class="mt-4 text-lg leading-8 text-gray-600">
+        "Mevcut Web Sitesi Hızlandırma ve Modernizasyon Paketi" ile sitenizi baştan yaratıyoruz.
+      </p>
+    </div>
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Hizmet Kartları */}
+      
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h3 class="text-lg font-semibold text-gray-900">Detaylı Performans Analizi</h3>
+        <p class="mt-2 text-base text-gray-600">Sitenizin mevcut yavaşlık nedenlerini ve potansiyel güvenlik açıklarını derinlemesine analiz edip raporluyorum.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h3 class="text-lg font-semibold text-gray-900">Görsel Optimizasyonu</h3>
+        <p class="mt-2 text-base text-gray-600">Yüksek boyutlu resimlerinizi, kalitelerini bozmadan modern WebP formatına dönüştürüp boyutlarını küçültüyorum.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h3 class="text-lg font-semibold text-gray-900">Kod Optimizasyonu</h3>
+        <p class="mt-2 text-base text-gray-600">Gereksiz CSS ve JavaScript kodlarını temizleyerek sitenizin tarayıcıda daha hızlı yüklenmesini sağlıyorum.</p>
+      </div>
+      
+      {/* Buraya diğer hizmet kartlarını ekleyebilirsin: Önbellekleme, Mobil Uyum, Güvenlik Taraması vb. */}
+    </div>
+  </div>
+</section>
+
+
+<section id="iletisim" class="bg-white py-20 sm:py-24">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+      Projenizi Konuşalım
+    </h2>
+    <p class="mt-4 text-lg leading-8 text-gray-600 max-w-2xl mx-auto">
+      Web sitenizin mevcut durumunu ve potansiyelini öğrenmek için ücretsiz bir ön analiz talep edebilirsiniz. Aklınızdaki tüm sorular için bana ulaşmaktan çekinmeyin.
+    </p>
+    <div class="mt-10">
+      <a href="mailto:mhr.dogmus@gmail.com" class="rounded-full bg-red-600 px-8 py-3 text-base font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 transition-colors">
+        E-posta Gönder
+      </a>
+      {/* ÖNEMLİ: Yukarıdaki "senin-emailin@ornek.com" kısmını kendi e-posta adresinle değiştirmeyi unutma! */}
+    </div>
+  </div>
+</section>
+
+<footer class="bg-gray-900 text-white">
+  <div class="container mx-auto py-12 px-6">
+    <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+      
+      <div>
+        <h3 class="text-xl font-bold">Muhammet Mahir Doğmuş</h3>
+        <p class="text-gray-400 mt-2 text-sm">
+          &copy; 2025 Tüm Hakları Saklıdır.
+        </p>
+      </div>
+
+      <div class="flex justify-center mt-6 md:mt-0 space-x-6">
+        <a href="https://github.com/KULLANICI-ADIN" target="_blank" class="text-gray-400 hover:text-white">
+          <span class="sr-only">GitHub</span>
+          {/* GitHub İkonu */}
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.942.359.308.678.92.678 1.852 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
+          </svg>
+        </a>
+        <a href="https://linkedin.com/in/KULLANICI-ADIN" target="_blank" class="text-gray-400 hover:text-white">
+          <span class="sr-only">LinkedIn</span>
+          {/* LinkedIn İkonu */}
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+      </main>
+
+  </body>
 </html>
